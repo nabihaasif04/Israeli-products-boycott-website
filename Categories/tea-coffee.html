@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category - Boycott vs Alternatives</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e68e0c;
+            background-image: url('images/bg.png');
+            background-repeat: repeat;
+            background-size: 100px;
+            color: #333;
+        }
+        header {
+            background-color: #fff;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .logo span {
+            color: #e74c3c;
+        }
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 100px 5% 50px;
+        }
+        .section {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+        .product-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        .product-item a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+        .product-item a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Falas<span>طيني</span></a>
+    </header>
+
+    <div class="content">
+        <div class="section">
+            <h2>Boycotted Products</h2>
+            <ul class="product-list">
+                <!-- Replace href links dynamically from DB -->
+                <li class="product-item"><a href="/products/boycott/1">Product A</a></li>
+                <li class="product-item"><a href="/products/boycott/2">Product B</a></li>
+                <li class="product-item"><a href="/products/boycott/3">Product C</a></li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Recommended Alternatives</h2>
+            <ul class="product-list">
+                <!-- Replace href links dynamically from DB -->
+                <li class="product-item"><a href="/products/alternative/101">Alternative X</a></li>
+                <li class="product-item"><a href="/products/alternative/102">Alternative Y</a></li>
+                <li class="product-item"><a href="/products/alternative/103">Alternative Z</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

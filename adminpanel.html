@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Falasطيني - Admin Panel</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Reset and base styles */
+    * { 
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: #e68e0c;
+      background-image: url('images/bg.png');
+      background-repeat: repeat;
+      background-size: 100px;
+      color: #333;
+      min-height: 100vh;
+      line-height: 1.6;
+      padding-top: 60px; /* to avoid header overlap */
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      padding: 0 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: 700;
+      color: #2c3e50;
+      cursor: pointer;
+      user-select: none;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: #e74c3c;
+      font-weight: 900;
+      margin-left: 2px;
+    }
+
+    /* Admin panel container */
+    .admin-panel {
+  max-width: 1200px;
+  margin: 30px auto 0 auto;  /* Added 30px top margin */
+  background: white;
+  border-radius: 15px;
+  padding: 25px 30px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  overflow-x: auto;
+}
+
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 1100px;
+    }
+
+    thead tr {
+      background-color: #e74c3c;
+      color: white;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+      vertical-align: middle;
+    }
+
+    tbody tr:hover {
+      background-color: #f9f9f9;
+    }
+
+    /* Admin comment textarea */
+    textarea.admin-comment {
+      width: 100%;
+      min-height: 50px;
+      border-radius: 8px;
+      border: 1.5px solid #ccc;
+      padding: 6px 10px;
+      font-family: inherit;
+      font-size: 13px;
+      resize: vertical;
+    }
+
+    /* Status badge */
+    .status-badge {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 12px;
+      color: white;
+      font-weight: 600;
+      font-size: 13px;
+      text-transform: capitalize;
+      user-select: none;
+    }
+    .status-pending {
+      background-color: #f39c12;
+    }
+    .status-approved {
+      background-color: #27ae60;
+    }
+    .status-rejected {
+      background-color: #c0392b;
+    }
+
+    /* Action buttons */
+    .action-btn {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      color: white;
+      transition: background-color 0.3s;
+      margin-right: 6px;
+      font-size: 13px;
+    }
+
+    .approve-btn {
+      background-color: #27ae60;
+    }
+    .approve-btn:hover {
+      background-color: #1e8449;
+    }
+
+    .reject-btn {
+      background-color: #c0392b;
+    }
+    .reject-btn:hover {
+      background-color: #922b21;
+    }
+
+    .delete-btn {
+      background-color: #7f8c8d;
+    }
+    .delete-btn:hover {
+      background-color: #606060;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      table {
+        font-size: 12px;
+        min-width: unset;
+      }
+      th, td {
+        padding: 8px 10px;
+      }
+      .admin-panel {
+        padding: 15px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo" onclick="location.href='Splash.html'">
+      Falas<span>ط</span>يني
+    </div>
+  </header>
+
+  <main class="admin-panel">
+    <h2>Admin Panel - Product Suggestions</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Suggestion ID</th>
+          <th>Type</th>
+          <th>Target Product Name</th>
+          <th>Target Brand Name</th>
+          <th>Target Category Name</th>
+          <th>Suggested Product Name</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Admin Comment</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Example row -->
+        <tr>
+          <td>1</td>
+          <td>Update</td>
+          <td>Milk</td>
+          <td>Brand A</td>
+          <td>Dairy Products</td>
+          <td>Almond Milk</td>
+          <td>Healthier alternative</td>
+          <td><span class="status-badge status-pending">pending</span></td>
+          <td><textarea class="admin-comment" placeholder="Add comment..."></textarea></td>
+          <td>
+            <button class="action-btn approve-btn" title="Approve">Approve</button>
+            <button class="action-btn reject-btn" title="Reject">Reject</button>
+            <button class="action-btn delete-btn" title="Delete Suggestion">Delete</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>2</td>
+          <td>Delete</td>
+          <td>Burger</td>
+          <td>Brand B</td>
+          <td>Restaurants</td>
+          <td>—</td>
+          <td>Unethical sourcing</td>
+          <td><span class="status-badge status-approved">approved</span></td>
+          <td><textarea class="admin-comment" placeholder="Add comment...">Removed due to complaints</textarea></td>
+          <td>
+            <button class="action-btn approve-btn" title="Approve">Approve</button>
+            <button class="action-btn reject-btn" title="Reject">Reject</button>
+            <button class="action-btn delete-btn" title="Delete Suggestion">Delete</button>
+          </td>
+        </tr>
+
+        <!-- More rows dynamically here -->
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>
